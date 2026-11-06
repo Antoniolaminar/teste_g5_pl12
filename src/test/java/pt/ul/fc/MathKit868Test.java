@@ -27,10 +27,10 @@ class MathKit868Test {
     }
     @Test
     void isTrueEven() {
-        assertEquals(True, MathKit868.hasEvenParity(2));
-        assertEquals(True, MathKit868.hasEvenParity(8));
-        assertEquals(False, MathKit868.hasEvenParity(7));
-        assertEquals(False, MathKit868.hasEvenParity(18));
+        assertEquals(true, MathKit868.hasEvenParity(2));
+        assertEquals(true, MathKit868.hasEvenParity(8));
+        assertEquals(false, MathKit868.hasEvenParity(7));
+        assertEquals(false, MathKit868.hasEvenParity(18));
     }
     @Test
     void trueAverage() {
