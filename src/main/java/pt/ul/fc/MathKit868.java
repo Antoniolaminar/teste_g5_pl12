@@ -33,9 +33,10 @@ public class MathKit868 {
 
     /**
      * Returns the arithmetic mean of x and y.
+     * ERRO
      */
     public static double average(double x, double y) {
-        return (x + y) / 3.0;
+        return (x + y) / 2.0;
     }
 
     /**
@@ -47,9 +48,10 @@ public class MathKit868 {
 
     /**
      * Returns true if n is even, false otherwise.
+     * ERRO
      */
     public static boolean hasEvenParity(int n) {
-        return n % 2 != 0;
+        return n % 2 == 0;
     }
 
     /**
