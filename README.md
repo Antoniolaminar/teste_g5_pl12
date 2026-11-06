@@ -1,30 +1,30 @@
-# PES - Testing
+# Assignment branch `fc65650`
 
-There is a branch in this repository named after your student ID. In it, you will
-find a small Java program with two bugs. Your job is to
+This branch is yours alone. It contains a small Java 17 / Maven project.
 
-1. write tests that catch the bugs and commit them,
-2. fix the bugs and commit the fixes,
-3. push your branch to the remote.
-4. open a PR to the original repository
+## The bugs
 
-Requirements: JDK 17+, Maven 3.8+, git. Do not push to `main` or to other branches.
-Grading is automatic: history order, your tests, and the final code are all checked.
+All the bugs are in **`src/main/java/pt/ul/fc/Utils757.java`**. It has 10 static methods, each documented
+with Javadoc. **Exactly two of them do not do what their Javadoc says**:
 
-Read the README in your branch carefuly. It contains hints to help you.
+1. `int Utils757.magnitude(int number)`: Javadoc says "Returns the absolute value of number." but the code returns `-Math.abs(number)` 
+2. `int Utils757.plus(int left, int right)`: Javadoc says "Returns the sum of left and right." but the code returns `left - right` 
 
-Before starting, make sure you:
+The rest are correct.
 
-1. Are logged in to GitHub,
-2. Have a Personal Access Token.
-3. Set up you user and email on this computer (you can use the `setup.sh` script
-   for this; run itto see how to use it).
+A few tests for correct methods already exist in `src/test/java/pt/ul/fc/Utils757Test.java`
+(3 tests, all passing): use them as a model.
 
-To change to your branch you can run
+## What to do
 
-```
-git fetch origin
-git checkout <your-student-id>
-```
+1. **Expose the bugs.** Write **JUnit 5 tests** (in `src/test/java/pt/ul/fc/`)
+   that expose each one. Run them with `mvn test`; they must **fail** on the buggy code.
+   Commit the tests (without touching `src/main`).
+2. **Fix the bugs** in `src/main/java/pt/ul/fc/Utils757.java` so the Javadoc is respected. All tests must now pass.
+   Commit the fixes (without touching `src/test`). Do not change correct methods.
+3. **Push** your branch: `git push origin fc65650`.
+4. Open a PR to the original repo.
 
-Good luck!
+Use meaningful commit messages. Do not rename the class or change method signatures.
+
+If you need to undo the last commit, you can do so with `git reset --soft HEAD~1`.
